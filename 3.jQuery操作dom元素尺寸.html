@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+
+    #box2 {
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+      padding:10px;
+    }
+    #box3 {
+      width: 200px;
+      height: 200px;
+      background-color: greenyellow;
+      padding:10px;
+      margin:10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    jQuery操作dom元素的尺寸 (宽和高)
+      1.width() 和 height()方法
+        获取和设置内容区的宽高
+        设置:
+          width(100)  注意: 不带单位
+      2.innerWidth() 和 innerHeight()
+        获取和设置内容区 + 内边距的宽高
+      3.outerWidth() 和 outerHeight()
+        获取和设置内容区 + 内边距 + 边框的宽高
+      4.outerWidth(true) 和 outerHeight(true)
+        获取和设置内容区 + 内边距 + 边框 + 外边距的宽高
+
+   -->
+
+  <div id="outer">
+    <div id="con">
+      <div id="box">1</div>
+      <div id="box2">2</div>
+      <div id="box3">3</div>
+    </div>
+  </div>
+  <script src="./jquery-1.12.4.js"></script>
+  <script>
+    // 1.设置内容区的宽高
+    $('#box').width(200)
+
+    // 2.设置内容区+内边距的宽高 (特别注意: 如果给innerWidth/innerHeight设置值,则设置的值只会作用在内容区的宽高上, 不会影响内边距的宽度)
+    $('#box2').innerWidth(300) //内容区 280 + 内边距10+10 = 300
+
+    // 3.设置内容区+内边距+边框+外边距的宽高 //设置不了, 只能设置
+    $('#box3').outerWidth(400)
+  </script>
+
+</body>
+
+</html>

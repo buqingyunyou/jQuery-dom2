@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="todo-container">
+        <div class="todo-wrap">
+          <div class="todo-header">
+            <input type="text" placeholder="请输入你的任务名称，按回车键确认" />
+          </div>
+          <ul class="todo-main">
+            <!-- <li>
+              <label>
+                <input type="checkbox" />
+                <span>xxxxx</span>
+              </label>
+              <button class="btn btn-danger">删除</button>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <span>yyyy</span>
+              </label>
+              <button class="btn btn-danger">删除</button>
+            </li> -->
+          </ul>
+          <div class="todo-footer">
+            <label>
+              <input type="checkbox" />
+            </label>
+            <span> <span>已完成0</span> / 全部2 </span>
+            <button class="btn btn-danger">清除已完成任务</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+      1. jQeury库要在最开始使用, 因为后面的js文件会使用它
+     -->
+    <script src="./lib/jquery-1.12.4.js"></script>
+    <!-- 
+      2. 自定义lib.js文件, 要在主线程代码前写, 因为主线程代码会调用自定义的lib
+     -->
+    <script src="./lib/mylib.js"></script>
+    <!-- 
+      3. 主线程代码, 放在最后引入, 因为它会使用其他js文件和第三方库
+     -->
+    <script src="./1.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    jQuery多库共存
+      jQuery使用时, 需要引入jQuery库, 其中的$函数可能在其他第三方库中也存在
+      即 - $函数冲突的问题
+      
+      a. 如果jQuery库引入在后, $冲突时
+        第一步: 先让jQuery释放$函数的控制权  $.noConflict();
+        第二步: 此时的$函数, 就不是jQuery的$函数, 若要使用, 则使用jQeury()函数, 效果一样
+
+      b. 如果jQeury库引入在后, $冲突时
+        要使用jQuery的函数, 请使用jQuery()方法替代
+
+   -->
+</body>
+</html>

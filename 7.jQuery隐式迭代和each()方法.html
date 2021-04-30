@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    jQuery具备隐式迭代特性:
+      即如果jQuery对象中,保存多个dom对象,如果给该jQuery对象注册事件, 会隐式迭代将其中所有的dom对象注册该事件  (多个dom对象, 注册的事件相同)
+
+    each()方法
+      如果想给jQuery对象中保存的多个dom对象, 注册不同的事件, 则不能使用隐式迭代方式注册事件
+      解决:
+        $('div').each(function(index,ele){  //特别注意: ele是dom对象
+          //ele表示当前的dom对象
+        })
+        对比dom的forEach()方法
+        arr.forEach(function(item,index){
+          //item表示当前的数组元素
+        })
+
+   -->
+</body>
+</html>

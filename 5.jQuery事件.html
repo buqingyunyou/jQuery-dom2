@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    jQuery事件:
+      1.注册事件
+        (1) 简单事件注册  (缺点: 一次只能给一个对象注册一个事件)
+          $('#box').click(callback)
+          $('#box').mouseenter(callback)
+          $('#box').mouseleave(callback)
+          $('#box').keyup(callback)
+          $('#box').keydown(callback)
+          $('#box').scroll(callback)
+
+        (2) 通用事件注册 (on方法, 一次可以给一个对象注册多个事件, 同时可进行事件代理)
+          a. 给dom元素自身注册事件
+            $('#outer').on('click',function(){事件处理函数})
+          b. 给dom元素代理的子元素注册事件
+            $('#outer')..on('click','#inner',function(){事件处理函数})
+            
+      2.移除事件
+        (1) 移除某dom元素的所有事件
+          $('#box').off()
+        (2) 移除某dom元素的指定事件
+          $('#box').off('click')
+        (3) 移除某dom元素的所有代理事件
+          $('#outer').off('mouseenter','**')
+
+      3.主动触发事件
+        (1) 主动触发简单事件,  加()调用即可    (会事件传播)
+          $('#box').click()
+        (2) 主动触发指定事件   (会事件传播)
+          $('#box').trigger('mouseenter')
+        (3) 主动触发指定事件  (阻止事件传播)
+          $('#box').triggerHandler('click')
+
+      4.事件对象 event
+        事件触发时, 会将event对象, 传入到事件处理函数中, 可在事件处理函数中直接获取到
+        事件对象中常见的属性:
+          (1) e.type   
+          (2) e.data   存储的是注册事件时传递到事件函数中的附加数据
+
+          (3) e.target  存储的是事件触发(目标元素)对象  (谁触发的事件,就是谁,不一定是注册事件的dom元素)
+          (4) e.currentTarget  存储的是注册事件的对象(事件绑定元素), 等同于this
+          (5) e.delegateTarget 代理对象
+
+          (6) e.screenX和e.screenY  存储的是偏移设备屏幕左上角的坐标
+          (6) e.offsetX和e.offsetY  存储的是光标偏移[目标元素]的坐标
+          (7) e.clientX和e.clientY  存储的是光标偏移[视口]的坐标
+          (8) e.pageX和e.pageY      存储的是光标偏移[文档]的坐标
+          
+          (9) e.keyCode             存储的是按键的键码
+
+          (10) e.stopPropagation    阻止事件传播
+          (11) e.preventDefault     阻止浏览器的默认行为
+
+   -->
+</body>
+</html>

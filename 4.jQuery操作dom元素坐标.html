@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+    }
+    #inner{
+      position: absolute;
+      left:10px;
+      top: 10px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    #scroll-outer{
+      overflow: auto;
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+    }
+    #scroll-inner{
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    jQuery操作dom元素的坐标:
+      1.offset()
+        相对于 [文档html] 的偏移坐标
+        a. 设置 (注意: 如果该元素没有定位, 则设置偏移坐标时, 会自动添加postition:relative)
+          $('#box').offset({
+            left:100,  //不带单位
+            top:100
+          })
+        b. 获取
+          $('#box').offset()
+
+      2.postion()  
+        相对于最近定位父级的偏移坐标  [特别注意: 只能获取, 不能设置]
+        $('#inner').position()
+
+      3.scrollTop()
+        纵向滚动条滚过的距离 (dom元素中, 内容滚过的距离)
+        a. 设置
+          j.scrollTop(10)
+        b. 获取
+          j.scrollTop()
+
+      4.scrollLeft()
+        横向滚动条滚过的距离 (dom元素中, 内容滚过的距离)
+        a. 设置
+          j.scrollLeft(20)
+        b. 获取
+          j.scrollLeft()
+   -->
+  <div id="outer">
+    <!-- <div id="box">
+      <div id="inner"></div>
+    </div> -->
+
+    <div id="scroll-outer">
+      <div id="scroll-inner"></div>
+    </div>
+  </div>
+  
+
+  <script src="./jquery-1.12.4.js"></script>
+  <script>
+    // 1.使用offset设置相对文档偏移坐标
+    $('#box').offset({
+      left:100,  //不带单位
+      top:100
+    })
+    // 2.使用offset获取相对文档偏移坐标
+    // console.log($('#box').offset()); //{top: 100, left: 100}
+
+    // 3.使用position设置相对最近定位父级偏移坐标,  特别注意: 不能设置, 只能获取
+    /* $('#inner').position({  //
+      left:20,
+      top:20
+    }) */
+    // 4.使用position获取相对最近定位父级偏移坐标, 返回对象
+    // console.log($('#inner').position()); //{top: 10, left: 10}
+
+
+    // 5.设置滚动条横向滚动的距离
+    $('#scroll-outer').scrollLeft(50); //设置
+    console.log($('#scroll-outer').scrollLeft()); //获取  50
+
+    // 6.设置滚动条纵向滚动的距离
+    $('#scroll-outer').scrollTop(100); //设置
+    console.log($('#scroll-outer').scrollTop()); //获取  100
+
+  </script>
+</body>
+
+</html>
